@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/textures/14x14_transparent.png" type="Texture" id=2]
+[ext_resource path="res://assets/scenes/main_menu/start_texture_button.gd" type="Script" id=3]
+[ext_resource path="res://assets/scenes/main_menu/quit_texture_button.gd" type="Script" id=4]
+[ext_resource path="res://assets/soundtrack/main_menu.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/fonts/32.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/scenes/main_menu/credits_texture_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/textures/menu_background.png" type="Texture" id=8]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+texture = ExtResource( 8 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 26.0
+margin_right = 225.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 1 )
+text = "JOHANN WACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 168.0
+margin_right = 176.0
+margin_bottom = 260.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartTextureButton" type="TextureButton" parent="VBoxContainer"]
+margin_right = 144.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="VBoxContainer/StartTextureButton"]
+margin_right = 60.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 6 )
+text = "BEGIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsTextureButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 32.0
+margin_right = 144.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CreditsLabel" type="Label" parent="VBoxContainer/CreditsTextureButton"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 6 )
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitTextureButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 144.0
+margin_bottom = 92.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuitLabel" type="Label" parent="VBoxContainer/QuitTextureButton"]
+margin_right = 130.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 6 )
+text = "CHICKEN OUT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+autoplay = true
+[connection signal="pressed" from="VBoxContainer/StartTextureButton" to="VBoxContainer/StartTextureButton" method="_on_StartTextureButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsTextureButton" to="VBoxContainer/CreditsTextureButton" method="_on_CreditsTextureButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitTextureButton" to="VBoxContainer/QuitTextureButton" method="_on_QuitTextureButton_pressed"]

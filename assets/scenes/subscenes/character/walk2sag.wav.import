@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walk2sag.wav-7c9034bef195b10c483c51a4c59d6b4a.sample"
+
+[deps]
+
+source_file="res://assets/scenes/subscenes/character/walk2sag.wav"
+dest_files=[ "res://.import/walk2sag.wav-7c9034bef195b10c483c51a4c59d6b4a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

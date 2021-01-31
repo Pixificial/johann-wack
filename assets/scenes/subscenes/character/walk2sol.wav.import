@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walk2sol.wav-445ce0db1b253d75ef5969f10211aed9.sample"
+
+[deps]
+
+source_file="res://assets/scenes/subscenes/character/walk2sol.wav"
+dest_files=[ "res://.import/walk2sol.wav-445ce0db1b253d75ef5969f10211aed9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
